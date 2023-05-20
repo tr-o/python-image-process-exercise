@@ -1,2 +1,3 @@
 print("test run")
-a - 11
+a = 11
+c = 2

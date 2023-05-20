@@ -21,4 +21,4 @@ cv2.ellipse(mask, (center_x, center_y), (major_radius, minor_radius), angle, 0, 
 # マスクを元画像に適用してフィルタリング
 filtered_image = cv2.bitwise_and(image, image, mask=mask)
 plt.imshow(filtered_image)
-
+print("end!")
