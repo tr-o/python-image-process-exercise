@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import json
 from scipy.spatial import Voronoi, Delaunay
+import os
 
 class VoronoiDelaunayAnalysis:
     def __init__(self, num_points=10):
