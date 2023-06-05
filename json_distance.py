@@ -92,3 +92,42 @@ def draw_lines_with_random_colors(json_data):
 # Example usage
 draw_lines_with_random_colors(json_data)
 
+import json
+import pandas as pd
+
+def create_neighbor_dataframe(json_str):
+    # Parse the JSON string into a Python object
+    json_data = json.loads(json_str)
+    
+
+    
+    # Create lists to store x, y, and distance values
+    x_values = []
+    y_values = []
+    distance_values = []
+
+
+    for i, point_data in json_data.items():
+    # Iterate over each neighbor
+        for neighbor in point_data["neighbors"]:
+            x = neighbor['x']
+            y = neighbor['y']
+            distance = neighbor['distance']
+            
+            # Append values to respective lists
+            x_values.append(x)
+            y_values.append(y)
+            distance_values.append(distance)
+    
+    # Create pandas DataFrame
+    neighbor_df = pd.DataFrame({
+        'x_neighbor': x_values,
+        'y_neighbor': y_values,
+        'distance': distance_values
+    })
+    
+    return neighbor_df
+
+
+create_neighbor_dataframe(json_data)
+
