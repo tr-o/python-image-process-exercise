@@ -1,7 +1,7 @@
 import numpy as np
 import cv2
 from matplotlib import pyplot as plt
-image = cv2.imread("image.jpg")
+image = cv2.imread("image.png")
 # 閉曲線を定義
 vertices = np.array([(100, 100), (800, 400),(800, 500),(100, 500)])
 # 閉曲線を内包する領域を作成
@@ -21,4 +21,6 @@ cv2.ellipse(mask, (center_x, center_y), (major_radius, minor_radius), angle, 0, 
 # マスクを元画像に適用してフィルタリング
 filtered_image = cv2.bitwise_and(image, image, mask=mask)
 plt.imshow(filtered_image)
+print("end!")
+
 
